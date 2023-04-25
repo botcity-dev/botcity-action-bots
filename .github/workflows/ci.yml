@@ -23,6 +23,7 @@ jobs:
       - name: Install Test Dependencies
         run: |
           pip install -r test-requirements.txt
+          pip install -r requirements.txt
       - name: Run Tests
         run: |
           pytest -v -vrxs
