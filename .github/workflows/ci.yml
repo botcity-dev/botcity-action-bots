@@ -32,4 +32,3 @@ jobs:
       - name: Run Tests
         run: |
           pytest -v -vrxs
-        env:
