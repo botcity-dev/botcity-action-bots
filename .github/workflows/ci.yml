@@ -1,11 +1,47 @@
 name: ci
 
 on:
+  workflow_call:
+    inputs:
+      list_os_name:
+        type: string
+        required: false
+        default: "['ubuntu-latest']"
+      list_python_version:
+        type: string
+        required: false
+        default: "['3.7', '3.11']"
   push:
     branches:
       - main
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-    ci:
-      uses: botcity-dev/botcity-reusable-workflows/.github/workflows/python_ci.yml@latest
+  build:
+    runs-on: ${{ matrix.os }}
+    defaults:
+        run:
+          shell: bash
+    strategy:
+      fail-fast: false
+      matrix:
+        os:  ${{fromJson(inputs.list_os_name)}}
+        python-version:  ${{fromJson(inputs.list_python_version)}}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Test Dependencies
+        run: |
+          pip install -r test-requirements.txt
+      - name: Run Tests
+        run: |
+          pytest -v -vrxs
