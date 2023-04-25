@@ -1,0 +1,14 @@
+name: linter
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  linter:
+    uses: botcity-dev/botcity-reusable-workflows/.github/workflows/python_linter.yml@latest
+    with:
+      mypy: true
+      docstring: true

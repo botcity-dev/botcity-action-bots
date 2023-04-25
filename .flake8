@@ -1,0 +1,13 @@
+[flake8]
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+    versioneer.py,
+max-line-length = 120
+ignore =
+    D212,
+    D100,
+    D101,
+    D104

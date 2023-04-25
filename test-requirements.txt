@@ -1,0 +1,9 @@
+pytest
+flake8
+isort
+pre-commit
+pytest-cov
+mypy
+flake8-docstrings
+types-requests
+requests-mock

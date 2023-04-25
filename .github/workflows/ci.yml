@@ -1,0 +1,11 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+    ci:
+      uses: botcity-dev/botcity-reusable-workflows/.github/workflows/python_ci.yml@latest
