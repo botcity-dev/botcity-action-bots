@@ -1,6 +1,6 @@
 # action.yaml
-name: 'Botcity action'
-description: ''
+name: 'Botcity Bots Action'
+description: 'Deploy, update and release action to Bots in BotCity'
 inputs:
   botId:
     description: 'Bot Id'
