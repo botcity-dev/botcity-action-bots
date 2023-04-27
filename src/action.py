@@ -258,13 +258,14 @@ class Action:
         }
 
         self.filepath = self._get_file_path()
-        exist_bot = self._exist_bot()
+        bot = self._exist_bot()
 
-        if self.args.deploy or not exist_bot:
+        if self.args.deploy or bot is None:
             self.deploy()
             self.update()
 
         if self.args.update:
+            self.set_version(bot=bot)
             self.update()
 
         if self.args.release:
@@ -272,10 +273,10 @@ class Action:
 
     def _exist_bot(self):
         try:
-            self.get()
-            return True
+            bot = self.get()
+            return bot
         except Exception:
-            return False
+            return None
 
     def _delete(self):
         """Delete bot in Maestro."""
@@ -286,3 +287,8 @@ class Action:
                     'Error during message. Server returned %d. %s' %
                     (req.status_code, req.json().get('message', ''))
                 )
+
+    def set_version(self, bot: dict):
+        """Set version to bot case not version and bot exists."""
+        if not self.args.version and bot is not None:
+            self.args.version = bot.get("version")

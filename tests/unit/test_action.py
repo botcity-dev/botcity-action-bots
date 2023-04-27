@@ -217,3 +217,10 @@ def test_delete_error(action_logged_mocked: Action, args: argparse.Namespace):
             mock_request.delete(f'{action_logged_mocked.maestro.server}/api/v2/bot/{args.botId}/version/{args.version}',
                              json={'message': 'testing error'}, status_code=400)
             action_logged_mocked._delete()
+
+
+def test_set_version(action_logged_mocked: Action):
+    action_logged_mocked.args.version = ''
+    action_logged_mocked.set_version(bot={'version': '1.0'})
+    assert action_logged_mocked.args.version == '1.0'
+
