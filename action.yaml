@@ -27,6 +27,11 @@ inputs:
   botPath:
     description: 'Path to compress bot?'
     required: true
+
+branding:
+  icon: 'settings'
+  color: 'orange'
+
 runs:
   using: 'composite'
   steps:
