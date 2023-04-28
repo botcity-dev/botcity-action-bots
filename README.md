@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <a href="">BotCity Action</a>
+    <a href="">BotCity Actions - Bots</a>
 </h1>
 
 <p align="center">
@@ -8,7 +8,7 @@
     <img alt="License" src=https://img.shields.io/hexpm/l/plug?style=for-the-badge>
   </a>
   <a>
-    <img alt="Release" src=https://img.shields.io/github/v/release/botcity-dev/action?style=for-the-badge>
+    <img alt="Release" src=https://img.shields.io/github/v/release/botcity-dev/botcity-action-bots?style=for-the-badge>
   </a>
   <a href="https://join.slack.com/t/communitybotcitydev/shared_invite/zt-1ru3r3u2a-SsJL~w_7out3y7sEv3xC2w">
     <img alt="Slack" src="https://img.shields.io/badge/slack-join community-4A154B.svg?logo=slack&style=for-the-badge"/>
