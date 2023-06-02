@@ -224,3 +224,15 @@ def test_set_version(action_logged_mocked: Action):
     action_logged_mocked.set_version(bot={'version': '1.0'})
     assert action_logged_mocked.args.version == '1.0'
 
+    action_logged_mocked.args.version = ''
+    action_logged_mocked.set_version(bot={'version': '1.0'})
+    assert action_logged_mocked.args.version == '1.0'
+
+def test_run_version_none(action_logged_mocked, args_mocked):
+    args_mocked[8] = ""
+    with pytest.raises(ValueError):
+        with patch("sys.argv", args_mocked):
+            os.environ['SERVER'] = 'https://testing.com'
+            os.environ['LOGIN'] = '123'
+            os.environ['KEY'] = '123'
+            action_logged_mocked.run()
