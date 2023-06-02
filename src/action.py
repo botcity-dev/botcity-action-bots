@@ -196,7 +196,7 @@ class Action:
                             action="store")
         parser.add_argument("-r", "--release", help="Will the release", dest='release',
                             type=lambda x: bool(strtobool(x)), action="store")
-        parser.add_argument("-v", "--version", help="New version to bot", type=str, action="store")
+        parser.add_argument("-v", "--version", help="New version to bot", type=str, action="store", required=True)
         parser.add_argument("-p", "--path", help="Path to github action repository", type=str, action="store")
         parser.add_argument("-bp", "--botPath", help="Path to compress bot", type=str, action="store")
         parser.add_argument("-bi", "--botId", help="Bot ID that will be modified.", type=str, action="store")
@@ -259,6 +259,9 @@ class Action:
 
         self.filepath = self._get_file_path()
         bot = self._exist_bot()
+
+        if not self.args.version:
+            raise ValueError("Version is required.")
 
         if self.args.deploy or bot is None:
             self.deploy()
