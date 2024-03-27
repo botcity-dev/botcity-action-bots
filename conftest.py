@@ -73,6 +73,7 @@ def args(bot_id):
     args.technology = "python"
     args.actionPath = pathlib.Path().absolute()
     args.botPath = './bot.zip'
+    args.repositoryLabel = "DEFAULT"
     return args
 
 
