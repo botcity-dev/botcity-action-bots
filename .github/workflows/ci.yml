@@ -3,12 +3,6 @@ name: ci
 on:
   push:
   pull_request_target:
-  pull_request:
-
-env:
-  SERVER: ${{ secrets.SERVER }}
-  LOGIN: ${{ secrets.LOGIN }}
-  KEY: ${{ secrets.KEY }}
 
 jobs:
   # The authorize job is used to authorize external contributors to run tests
@@ -41,5 +35,9 @@ jobs:
           pip install -r test-requirements.txt
           pip install -r requirements.txt
       - name: Run Tests
+        env:
+          SERVER: ${{ secrets.SERVER }}
+          LOGIN: ${{ secrets.LOGIN }}
+          KEY: ${{ secrets.KEY }}
         run: |
           pytest -v -vrxs
