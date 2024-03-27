@@ -21,6 +21,7 @@ jobs:
       - run: |
           true
   ci:
+    needs: authorize
     runs-on: 'ubuntu-latest'
     defaults:
       run:
