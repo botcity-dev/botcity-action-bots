@@ -3,11 +3,12 @@ name: ci
 on:
   push:
   pull_request_target:
+  pull_request:
 
-env:
-  SERVER: ${{ secrets.SERVER }}
-  LOGIN: ${{ secrets.LOGIN }}
-  KEY: ${{ secrets.KEY }}
+  env:
+    SERVER: ${{ secrets.SERVER }}
+    LOGIN: ${{ secrets.LOGIN }}
+    KEY: ${{ secrets.KEY }}
 
 jobs:
   # The authorize job is used to authorize external contributors to run tests
