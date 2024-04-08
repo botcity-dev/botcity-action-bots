@@ -165,6 +165,7 @@ class Action:
             "version": self.args.version,
             "technology": self.args.technology.upper(),
             "command": None,
+            "repositoryLabel": self.args.repositoryLabel,
         }
         with requests.post(url, json=data, headers=self.headers, timeout=5) as req:
             if req.status_code != 200:
@@ -202,6 +203,8 @@ class Action:
         parser.add_argument("-bi", "--botId", help="Bot ID that will be modified.", type=str, action="store")
         parser.add_argument("-t", "--technology", help="technology bot.", type=str, action="store")
         parser.add_argument("-ap", "--actionPath", help="actionPath", type=str, action="store")
+        parser.add_argument("-re", "--repositoryLabel", help="This is the repository used at BotCity Orchestrator",
+                            type=str, action="store", required=False, default="DEFAULT")
 
         args = parser.parse_args()
         return args

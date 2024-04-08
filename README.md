@@ -65,14 +65,16 @@ jobs:
 <!-- end usage -->
 
 ### 🔣 Inputs
-| Input           | Description                                                                                                                                                          | Default      |
-|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| `technology`    | Technology used in the Bot. (Python, Java, Javascript, Typescript or Command.                                                                                        | **Required** |
-| `botPath`       | Compressed file path. (zip or tar.gz)                                                                                                                                | **Required** |
-| `update`        | Run update in Maestro.                                                                                                                                               | `false`      |
-| `deploy`        | Execute deploy in Maestro.                                                                                                                                           | `false`      |
-| `release`       | Release version to bot in Maestro                                                                                                                                    | `false`      |
-| `version`       | Version of the action to run. If `version` is not set, the latest version is used in update. It is necessary to pass the version when performing deploy and release. | None         |
+| Input             | Description                                                                                                                                                          | Default      |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| `technology`      | Technology used in the Bot. (Python, Java, Javascript, Typescript or Command.                                                                                        | **Required** |
+| `botPath`         | Compressed file path. (zip or tar.gz)                                                                                                                                | **Required** |
+| `update`          | Run update in Maestro.                                                                                                                                               | `false`      |
+| `deploy`          | Execute deploy in Maestro.                                                                                                                                           | `false`      |
+| `release`         | Release version to bot in Maestro                                                                                                                                    | `false`      |
+| `version`         | Version of the action to run. If `version` is not set, the latest version is used in update. It is necessary to pass the version when performing deploy and release. | None         |
+| `repositoryLabel` | This is the repository used at BotCity Orchestrator. Only use in Deploy.                                                                                             | DEFAULT      |
+
 
 ## ⛑ Support
 
