@@ -44,11 +44,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
+      - name: Obtenha permissão para utilizar o build.
+        run: chmod +x build.sh
+      - name: Executando o build.
+        run: ./build.sh
       - name: BotCity Action
-        uses: botcity-dev/action@v1.0
+        uses: botcity-dev/botcity-action-bots@v1.0.0
         with:
           update: true
           deploy: false
