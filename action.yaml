@@ -48,5 +48,5 @@ runs:
       shell: bash
     - name: Run botcity action
       id: botcity-action
-      run: python ${{ github.action_path }}/main.py --update=${{ inputs.update }} --deploy=${{ inputs.deploy }}  --release=${{ inputs.release }} --version=${{ inputs.version }} --botId=${{ inputs.botId }} --path=${{ github.workspace }} --botPath=${{ inputs.botPath }} --technology=${{ inputs.technology }} --actionPath=${{ github.action_path }} --repositoryLabel=${{ github.repository_label }}
+      run: python ${{ github.action_path }}/main.py --update=${{ inputs.update }} --deploy=${{ inputs.deploy }}  --release=${{ inputs.release }} --version=${{ inputs.version }} --botId=${{ inputs.botId }} --path=${{ github.workspace }} --botPath=${{ inputs.botPath }} --technology=${{ inputs.technology }} --actionPath=${{ github.action_path }} --repositoryLabel=${{ github.repositoryLabel }}
       shell: bash
