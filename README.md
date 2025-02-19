@@ -50,7 +50,7 @@ jobs:
       - name: Executando o build.
         run: ./build.sh
       - name: BotCity Action
-        uses: botcity-dev/botcity-action-bots@v1.0.0
+        uses: botcity-dev/botcity-action-bots@latest
         with:
           update: true
           deploy: false
