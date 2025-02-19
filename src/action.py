@@ -263,7 +263,7 @@ class Action:
         self.filepath = self._get_file_path()
         bot = self._exist_bot()
 
-        if not self.args.version:
+        if not self.args.version and (self.args.deploy or self.args.release):
             raise ValueError("Version is required.")
 
         if self.args.deploy or bot is None:
